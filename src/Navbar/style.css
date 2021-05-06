@@ -1,0 +1,20 @@
+
+  .d-block{
+    height:600px;
+  }
+  .carousel-control-prev-icon{
+    visibility: hidden;
+  }
+  .carousel-control-next-icon{
+    visibility: hidden;
+  }
+  .style-category{
+    align-items: center !important;
+    width:100% !important;
+    margin-bottom: 10px;
+  }
+  table,th,td{
+    border:1px solid black;
+  }
+ 
+  /*  */
