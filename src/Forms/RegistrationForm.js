@@ -5,6 +5,7 @@ import "./style.css";
 import {Register} from "../AuthUser/Authaction";
 import { useDispatch } from "react-redux";
 import {Button} from "react-bootstrap";
+import {ToastContainer,toast} from "react-toastify";
 
 function Registration() {
 
@@ -52,6 +53,7 @@ function Registration() {
             console.log(values);
             
             dispatch(Register(values))
+            toast.info("Registration Successful")
             history.push('/login')
             
         }
@@ -59,6 +61,7 @@ function Registration() {
     return (
         <>
         <h1>Registration Form</h1>
+        <ToastContainer/>
         <form className="wrapper fadeInDown" onSubmit={formik.handleSubmit}>
 
         <input type="text" style={{padding:"0px 20px"}}   onChange={formik.handleChange} value={formik.values.firstname} name="firstname" placeholder="First Name"/>

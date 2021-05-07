@@ -38,7 +38,7 @@ export default function Home() {
 
      const handlerCart=(itemId)=>{
         dispatch(addToHomeCart(itemId))
-        toast("Added Item Succesfully")
+        toast.success("Added Item Succesfully")
         
     }
     
