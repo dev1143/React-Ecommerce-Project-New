@@ -9,6 +9,8 @@ import {CardsHome,CardsHome1,CardsHome2} from './CardsHome';
 import {Categories} from "../Products/Catergory.json";
 import {HomeImage} from "./Carousel.json";
 import Footer from "../Navbar/Footer";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./style.css"
 
 export default function Home() {
@@ -36,16 +38,21 @@ export default function Home() {
 
      const handlerCart=(itemId)=>{
         dispatch(addToHomeCart(itemId))
+        toast("Added Item Succesfully")
+        
     }
+    
 
     const imageStyle={
         height:"200px",
         width:"200px",
     }
+    
 
 
     return (
         <div>
+            <ToastContainer />
             <img style={{width:"100%"}} alt="cannot render" src={Background}></img> 
             <Container>
             <section id="#products category">
@@ -92,20 +99,24 @@ export default function Home() {
                     homeState.map((home)=>(
                         <Col lg={3} md={3} xs={12}>
                         <Card style={{ width: '14rem' },{alignItems:"center"}}>
+                            
                         <Card.Img variant="top" style={imageStyle} src={home.image} />
                         <Card.Body>
                         <p style={{fontSize:'15px'}} >{home.title}</p>
-                        <Button variant="primary" onClick={()=>handlerCart(home.id)}>Add to Cart</Button>
+                        <Button variant="primary" onClick={()=>handlerCart(home.id)} >Add to Cart</Button>
+                        
                         </Card.Body>
                         </Card>
+                        
                         </Col>
                     ))
                 }
-                </Row>
                 
+                </Row>
+    
             </section>
             </Container>
-
+            
 
             <section id="#carousel">
                 <div>

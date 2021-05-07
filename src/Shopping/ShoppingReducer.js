@@ -45,7 +45,7 @@ export const ShoppingReducer=(state=InitState,action)=>{
                 ? state.cart.map((item1) =>
                     item1.id === action.payload.id
                       ? { ...item1, qty: item1.qty + 1 }
-                      : item
+                      : item1
                   )
                 : [...state.cart, { ...item1, qty: 1 }],
             }
